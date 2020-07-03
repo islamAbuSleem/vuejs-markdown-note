@@ -1,0 +1,164 @@
+
+.note{
+    min-height: 560px;
+    display: flex;
+    
+}
+.main{
+    width: 100%;
+    border: 1px solid #ccc;
+    flex: 1.5;
+    overflow: hidden
+}
+.main textarea{
+    border: none;
+    width: 99%;
+    resize: unset;
+    padding: 10px; 
+    height: 40%;
+    background-color: #fbfbfb;
+    -webkit-transition:all .38s ease-in-out;
+    -moz-transition:all .38s ease-in-out;
+    -o-transition:all .38s ease-in-out;
+    transition:all .38s ease-in-out;
+    -webkit-box-shadow: 0 3px 8px -2px #363636;
+    -moz-box-shadow: 0 3px 8px -2px #363636;
+    -o-box-shadow: 0 3px 8px -2px #363636;
+    box-shadow: 0 3px 8px -2px #363636;
+}
+.preview{
+    padding:10px;
+    border: 1px solid #ccc;
+    flex: 2;
+    background-color: #f6f6f6;
+}
+.note-list{
+    border: 1px solid #ccc;
+    padding: 10px;
+    flex: 1;
+}
+.toolbar button{
+    background-color: #90e7a7;
+    height: 35px;
+    width: 95px;
+    border: 1px solid #81bf87;
+    cursor: pointer;
+    -webkit-box-shadow: 0 2px 6px -2px #09902d;
+    -moz-box-shadow: 0 2px 6px -2px #09902d;
+    -o-box-shadow: 0 2px 6px -2px #09902d;
+    box-shadow: 0 2px 6px -2px #09902d;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.toolbar button:active,
+.toolbar button:focus,
+.toolbar button:focus-within{
+  outline: none !important
+}
+.note .note-list .notes .list-note{
+   font-size: 18px;
+    cursor: pointer;
+    padding: 10px;
+}
+.note .note-list .notes .selected{
+    background-color: #90e7a7;
+    padding: 10px
+}
+.note .note-list .notes .selected .stared{
+    color: #ef8107;
+}
+.main .toolbox{
+    height: 45px;
+    width: 100%;
+}
+.main .toolbox label{
+    position: absolute;
+    height: 14px;
+    line-height: 14px;
+    margin: 10px;
+    background-color: #f2f2f2;
+    padding: 8px;
+    border-radius: 3px;
+    line-height: 11px;
+    cursor: pointer;
+    -webkit-transition:all .3s ease-in-out;
+    -moz-transition:all .3s ease-in-out;
+    -o-transition:all .3s ease-in-out;
+    transition:all .3s ease-in-out;
+}
+.main .toolbox label:nth-of-type(2){
+    margin-left: 7%;
+}
+.main .toolbox label:nth-of-type(3){
+    margin-left: 10%;
+}
+.main .toolbox label:hover{
+    background-color: #d5d5d5;
+    color: #222
+}
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  text-align: center;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  text-align: center;
+}
+:-ms-input-placeholder { /* IE 10+ */
+    text-align: center;
+}
+:-moz-placeholder { /* Firefox 18- */
+  text-align: center;
+}
+.main .toolbox .show{
+    display: block !important;
+    border: 1px solid #90e7a7;
+    background-color: #e4fee6;
+    border-radius: 3px;
+    height: 22px;
+    margin-left: 10px;
+    top: 55px;
+    position: absolute;
+    -webkit-box-shadow: 0 1px 3px -1px #959595;
+    -moz-box-shadow: 0 1px 3px -1px #959595;
+    -o-box-shadow: 0 1px 3px -1px #959595;
+    box-shadow: 0 1px 3px -1px #959595;
+}
+.marginTop{
+    margin-top: 9%;
+}
+-:placeholder{
+    margin-left: 5px;
+}
+.main .toolbox .fa-star,
+.main .toolbox .fa-star-o,
+.note .notes .list-note .fa-star,
+.note .notes .list-note .fa-star-o{
+    color: #ffc00d;
+ 
+}
+.note .notes .list-note .fa-star,
+.note .notes .list-note .fa-star-o{
+   display: inline-block;
+    margin-right: 30px;
+    float: right;
+    line-height: 22px;
+}
+.main .statusbar .date,
+.main .statusbar .lines,
+.main .statusbar .words,
+.main .statusbar .characters{
+    width: 100%;
+    padding: 6px 10px;
+      -webkit-box-shadow: 0 1px 3px -1px #959595;
+    -moz-box-shadow: 0 1px 3px -1px #959595;
+    -o-box-shadow: 0 1px 3px -1px #959595;
+    box-shadow: 0 1px 3px -1px #959595;
+}
+h3{
+    text-align: center;
+    color: #444;
+}
+p{
+    text-align: center;
+    color: #ea3f3f;
+    padding: 4px;
+}

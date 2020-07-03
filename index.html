@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>vue js</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+    </head>
+    <body>
+        
+
+        <!-- start note -->
+        <div id="note" class="note">
+            
+             <section class="note-list">
+                 <!-- here will be the note list -->
+                 <div class="toolbar">   <!-- toolbar-->
+                     <!-- add note button -->
+                    <button @click="addNote" v-bind:title="notes.length + ' note(s) already'">Add Note</button>
+                     
+                 </div>
+                 <div class="notes"> <!-- here we will list notes-->
+                    <div class="list-note" v-for="note of sortedNotes" @click="selectNote(note)" :class="{selected: note === selectedNote}">{{note.title}} <i :class="{'fa fa-star-o': !selectedNote.favorite,'fa fa-star': selectedNote.favorite, stared: note === selectedNote}" v-if="note.favorite"></i></div>
+                 
+                 </div>
+            </section>
+            <template v-if="selectedNote">
+                <!-- main pane -->
+                <section class="main">
+                    <div class="toolbox">
+                        <!-- our toolbar is here-->
+                        <label @click="show = true">Rename</label>
+                        <input :class="{show:show}" type="text" v-if="show" @blur="hideInput" v-model="selectedNote.title" placeholder="Note Title">
+                        <label @click="removeNote" title="remove note"><i class="fa fa-trash"></i></label>
+                        <label @click="favoriteNote"  title="Favorite Note"><i :class="{'fa fa-star-o': selectedNote.favorite,'fa fa-star': !selectedNote.favorite}"></i></label>
+                    </div>
+                    <!-- the note box -->
+                    <textarea v-model="selectedNote.content" :class="{marginTop : show}"></textarea>
+                    <div class="toolbar statusbar">
+                        <h3>Welcome to Colored Note</h3>
+                        <p>Don't forget to backup your notes before removing browser or installing new windows as colored note uses browser local sotrage.</p>
+                        <div class="date">
+                            <span class="label">Created</span>
+                            <span class="value">{{ selectedNote.created | date }}</span>
+                        </div>
+                        <div class="lines">
+                            <span class="label">Lines</span>
+                            <span class="value">{{ linesCount}}</span>
+                        </div>
+                        <div class="words">
+                            <span class="label">Words</span>
+                            <span class="value">{{ wordsCount}}</span>
+                        </div>
+                        <div class="characters">
+                            <span class="label">Characters</span>
+                            <span class="value">{{ charactersCount}}</span>
+                        </div>
+                    </div>
+
+                </section>
+
+                <!-- preview pane -->
+                <section class="preview" v-html="notePreview">
+
+                </section>
+           </template>
+        </div>
+
+        <script src="js/vue.js"></script>
+        <script src="js/moment.js"></script>
+        <script src="js/script.js"></script>
+        
+    </body>
+</html>
